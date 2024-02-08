@@ -11,6 +11,12 @@ body {
 
 }
 
+
+*{
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter',
+  sans-serif;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -54,6 +60,11 @@ header{
   width: 210px;
   border-radius: 40px;
   margin-right: 30px;
+  transition: all .2s linear;
+  &:hover{
+    box-shadow: 0px 20px 30px 0px rgba(0, 0, 0, 0.06);
+    transform: translateY(-5px);
+  }
   h5{
     font-weight: 400;
     font-size: 14px;
@@ -66,6 +77,11 @@ header{
   b{
     font-size: 14px;
   }
+
+  .favorite{
+    position: absolute;
+    cursor: pointer;
+  }
 }
 
 
@@ -76,4 +92,131 @@ border-radius: 8px;
 width: 32px;
 height: 32px;
 background: rgb(255, 255, 255);
+}
+
+
+.search-block{
+  border: 1px solid #f3f3f3;
+  border-radius: 10px;
+  padding: 0 15px;
+  input{
+    border: 0;
+    padding: 13px;
+    font-size: 16px;
+    width: 200px;
+  }
+}
+
+.overlay{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+.drawer{
+ display: flex;
+ flex-direction: column;
+  position: absolute;
+  width: 420px;
+  right: 0;
+  height: 100%;
+  box-shadow: -10px 4px 24px 0px rgba(0, 0, 0, 0.1);
+background: rgb(255, 255, 255);
+padding: 30px;
+.items{
+  flex: 1;
+  overflow: auto;
+  margin-bottom: 40px;
+}
+h2{
+  margin: 0;
+  font-size: 24px;
+}
+}
+
+
+.cartItem {
+  border: 1px solid rgb(243, 243, 243);
+border-radius: 20px;
+overflow: hidden;
+padding: 20px;
+margin-bottom: 20px;
+.cartItemImg{
+  height: 70px;
+  width: 70px;
+  background-size: contain;
+  background-position: 0 -3px;
+  background-repeat: no-repeat;
+  margin-right: 20px;
+}
+p{
+  margin: 0;
+  font-size: 16px;
+}
+b{
+  font-size: 14px;
+}
+.removeBtn{
+  opacity: 0.5;
+  cursor: pointer;
+  transition: all .3s linear;
+  &:hover{
+    opacity: 1;
+  }
+}
+}
+
+
+.cartTotalBlock{
+  ul{
+    display: block;
+    margin-bottom: 40px !important;
+    li{
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 20px;
+    }
+    div{
+      position: relative;
+      margin: 0 7px;
+      top: -4px;
+      flex: 1;
+      height: 1px;
+      border-bottom: 1px dashed rgb(223, 223, 223);
+    }
+    
+  }
+  .greenButton{
+    position: relative;
+    transition: all .3s linear;
+    &:hover{
+      img{
+        transform: translateX(5px);
+      }
+    }
+   img{
+    transition: all .3s linear;
+      position: absolute;
+      right: 30px;
+      top: 20px;
+    }
+  }
+}
+
+
+.greenButton{
+  width: 100%;
+    color: #fff;
+    font-weight: 600;
+line-height: 19px;
+letter-spacing: 0%;
+border-radius: 18px;
+background: rgb(157, 213, 88);
+padding: 18px 0;
+border: none;
+cursor: pointer;
+font-size: 16px;
 }
